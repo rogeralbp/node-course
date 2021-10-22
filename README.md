@@ -8,5 +8,5 @@ Command to execute the JS Files from console
 ```
 and then 
 ```
- node app.js
+ node file_name.js
 ```
