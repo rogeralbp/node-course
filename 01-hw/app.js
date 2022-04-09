@@ -1,6 +1,5 @@
 
-
-let  name = 'Roger Oporta';
+let name = 'Roger Oporta';
 
 console.log( name );
 
@@ -8,6 +7,3 @@ console.log( name );
 
 console.log( name );
 
-// Hello World
-
-console.log( 'Hello World' );
