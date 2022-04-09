@@ -17,7 +17,7 @@
 
 const salute = ( name ) => {
 
-    return ` Hello dear/lady ${name}`;
+    return ` Hello Dear ${name}`;
 
 }
 
