@@ -10,3 +10,13 @@
 
 console.log(normal);
 console.log(templateString);
+
+
+const html = `
+
+<h1>Hello</h1>
+<p>world</p>
+
+`;
+
+console.log(html);
