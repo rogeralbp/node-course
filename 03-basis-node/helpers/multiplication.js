@@ -4,30 +4,37 @@
  */
 
 
- const fs = require('fs');
+const fs = require('fs');
+const { resolve } = require('path');
 
 const createFile = ( baseNumber = 5 ) => {
 
-    console.clear();
+    return new Promise( (resolve , reject) => {
 
-    console.log('============================================');
-    console.log(`     Multiplication table of = ${baseNumber}`);
-    console.log('============================================');
+        console.clear();
+
+        console.log('============================================');
+        console.log(`     Multiplication table of = ${baseNumber}`);
+        console.log('============================================');
 
 
-    let output = '';
+        let output = '';
 
-    for( let i = 1; i <=10 ; i++ ){
+        for( let i = 1; i <=10 ; i++ ){
 
-        output += ` ${baseNumber} X ${i}  = ${ baseNumber * i }\n`;
-    }
+            output += ` ${baseNumber} X ${i}  = ${ baseNumber * i }\n`;
+        }
 
-    console.log( output );
-    console.log('============================================');
+        console.log( output );
+        console.log('============================================');
 
-    fs.writeFileSync(`multiplication-table-${baseNumber}.txt` , output ); 
+        fs.writeFileSync(`multiplication-table-${baseNumber}.txt` , output ); 
 
-    console.log(`multiplication-table-${baseNumber}.txt CREATED`);
+        resolve(`multiplication-table-${baseNumber}.txt`);
+
+    } )
+
+   
 }
 
 module.exports = {
