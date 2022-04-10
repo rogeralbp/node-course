@@ -7,11 +7,14 @@
  * .......
  * 5 x 10 = 50
  */
+const baseNumber = 5;
 
 console.clear();
 console.log('============================================');
+console.log(`   Multiplication table of ${baseNumber}`);
+console.log('============================================');
 
-const baseNumber = 5;
+
 
 for( let i = 1; i <=10 ; i++ ){
 
