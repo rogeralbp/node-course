@@ -13,7 +13,7 @@
  * .......
  * 5 x 10 = 50
  */
-const baseNumber = 5;
+const baseNumber = 6;
 
 console.clear();
 console.log('============================================');
@@ -31,7 +31,7 @@ for( let i = 1; i <=10 ; i++ ){
 console.log( output );
 console.log('============================================');
 
-fs.writeFile('multiplication-table-5.txt' , output , (err)  => {
+fs.writeFile(`multiplication-table-${baseNumber}.txt` , output , (err)  => {
 
     if (err) throw err;
 
