@@ -67,15 +67,32 @@ const getSalaryEmployeeById = ( id , callback ) => {
  }
 
 
+//Indian Rabbit
+
+let indianRabbit = 1;
+
+
 //Using the function as a Promise
 
-getEmployeeById(1)
-        .then( employee => console.log( employee ) )// if everything is fine this will be executed
-        .catch( error => console.log( error ) );//otherwise this will be executed
+// getEmployeeById(indianRabbit)
+//         .then( employee => console.log( employee ) )// if everything is fine this will be executed
+//         .catch( error => console.log( error ) );//otherwise this will be executed
 
 
-getSalaryEmployeeById(1)
-        .then( employee => console.log( employee ) )// if everything is fine this will be executed
-        .catch( error => console.log( error ) );//otherwise this will be executed
+// getSalaryEmployeeById(indianRabbit)
+//         .then( employee => console.log( employee ) )// if everything is fine this will be executed
+//         .catch( error => console.log( error ) );//otherwise this will be executed
 
 //--------------------------------------------------------------------------------------------------------------
+
+//Sumarized way to build promises over promises
+
+let employeeName;
+
+getEmployeeById(indianRabbit)
+        .then( employee => {
+            employeeName = employee;
+            return getSalaryEmployeeById(indianRabbit);
+        } )
+        .then( salary => console.log( 'Employee: ', employeeName, 'has a salary of: ', salary ) )
+        .catch( error => console.log( error ) );
