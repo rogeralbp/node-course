@@ -4,7 +4,7 @@ const { createFile } = require('./helpers/multiplication');
 
 console.clear();
 
-const baseNumber = 16;
+const baseNumber = 36;
 
 
 createFile( baseNumber )

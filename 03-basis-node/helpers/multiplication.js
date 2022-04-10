@@ -5,11 +5,11 @@
 
 
 const fs = require('fs');
-const { resolve } = require('path');
 
-const createFile = ( baseNumber = 5 ) => {
+const createFile = async( baseNumber = 5 ) => {
 
-    return new Promise( (resolve , reject) => {
+    
+    try {
 
         console.clear();
 
@@ -30,11 +30,13 @@ const createFile = ( baseNumber = 5 ) => {
 
         fs.writeFileSync(`multiplication-table-${baseNumber}.txt` , output ); 
 
-        resolve(`multiplication-table-${baseNumber}.txt`);
+        return `multiplication-table-${baseNumber}.txt`;
 
-    } )
+    } catch (error) {
+        
+        throw error;
+    }
 
-   
 }
 
 module.exports = {
