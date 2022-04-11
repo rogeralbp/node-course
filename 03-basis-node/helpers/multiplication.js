@@ -3,20 +3,11 @@
  * Using fileSystem from https://nodejs.org/dist/latest-v16.x/docs/api/fs.html#fswritefilefile-data-options-callback
  */
 
-
 const fs = require('fs');
 
-const createFile = async( baseNumber = 5 ) => {
+const createFile = async( baseNumber = 5 , list = false ) => {
 
-    
     try {
-
-        console.clear();
-
-        console.log('============================================');
-        console.log(`     Multiplication table of = ${baseNumber}`);
-        console.log('============================================');
-
 
         let output = '';
 
@@ -25,8 +16,16 @@ const createFile = async( baseNumber = 5 ) => {
             output += ` ${baseNumber} X ${i}  = ${ baseNumber * i }\n`;
         }
 
-        console.log( output );
-        console.log('============================================');
+        if( list ){
+
+            console.log('============================================');
+            console.log(`     Multiplication table of = ${baseNumber}`);
+            console.log('============================================');
+
+            console.log( output );
+            console.log('============================================');
+
+        }
 
         fs.writeFileSync(`multiplication-table-${baseNumber}.txt` , output ); 
 
